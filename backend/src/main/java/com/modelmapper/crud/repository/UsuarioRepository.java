@@ -9,6 +9,6 @@ import com.modelmapper.crud.entities.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
 	
-	List<Usuario> findByNomeContainingOrderByNome(String nome);
+	List<Usuario> findByNomeIgnoreCaseContainingOrderByNome(String nome);
 
 }
