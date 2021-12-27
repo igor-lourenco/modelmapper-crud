@@ -44,7 +44,6 @@ public class UsuarioResource {
 		return ResponseEntity.ok(obj);
 	}
  
-
 	@PostMapping()
 	public ResponseEntity<UsuarioDTO> insert(@RequestBody UsuarioComSenhaDTO dto) {
 		var obj = service.insert(dto);

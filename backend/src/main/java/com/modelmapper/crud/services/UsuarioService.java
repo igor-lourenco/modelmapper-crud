@@ -55,7 +55,6 @@ public class UsuarioService {
 
 	@Transactional()
 	public UsuarioDTO insert(UsuarioComSenhaDTO dto) {
-		// Usuario entity = new Usuario();
 		Usuario entity = modelMapper.map(dto, Usuario.class);
 		entity = repository.save(entity);
 		return modelMapper.map(entity, UsuarioDTO.class);
@@ -65,8 +64,6 @@ public class UsuarioService {
 	public List<UsuarioDTO> findAll(String nome) {
 		List<Usuario> entity = repository.findByNomeIgnoreCaseContainingOrderByNome(nome);
 		return entity.stream().map(u -> modelMapper.map(u, UsuarioDTO.class)).collect(Collectors.toList());
-		// return entity.stream().map(u -> new
-		// UsuarioDTO(u)).collect(Collectors.toList());
 	}
 
 	@Transactional(readOnly = true)
