@@ -55,7 +55,8 @@ public class UsuarioService {
 
 	@Transactional()
 	public UsuarioDTO insert(UsuarioComSenhaDTO dto) {
-		Usuario entity = modelMapper.map(dto, Usuario.class);
+		Usuario entity = new Usuario();
+		modelMapper.map(dto, entity);
 		entity = repository.save(entity);
 		return modelMapper.map(entity, UsuarioDTO.class);
 	}
@@ -67,8 +68,8 @@ public class UsuarioService {
 	}
 
 	@Transactional(readOnly = true)
-	public UsuarioComSenhaDTO findById(Long id) {
+	public UsuarioDTO findById(Long id) {
 		Usuario entity = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Usuario não existe"));
-		return modelMapper.map(entity, UsuarioComSenhaDTO.class);
+		return modelMapper.map(entity, UsuarioDTO.class);
 	}
 }

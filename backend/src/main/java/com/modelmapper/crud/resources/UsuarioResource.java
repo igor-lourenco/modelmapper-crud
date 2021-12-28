@@ -52,7 +52,7 @@ public class UsuarioResource {
 	}
 
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<UsuarioComSenhaDTO> findById(@PathVariable Long id) {
+	public ResponseEntity<UsuarioDTO> findById(@PathVariable Long id) {
 		var obj = service.findById(id);
 		return ResponseEntity.ok(obj);
 	}

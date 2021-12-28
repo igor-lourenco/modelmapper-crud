@@ -54,7 +54,6 @@ public class UsuarioRepositoryTests {
 		usuario = repository.save(usuario);
 
 		Assertions.assertEquals(usuario.getNome(), "AlexTeste");
-		Assertions.assertEquals(usuario.getNome(), "AlexTeste");
 	}
 
 	@Test
