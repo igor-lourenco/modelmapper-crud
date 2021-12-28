@@ -24,7 +24,6 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.modelmapper.crud.entities.Usuario;
-import com.modelmapper.crud.entities.dto.UsuarioComSenhaDTO;
 import com.modelmapper.crud.entities.dto.UsuarioDTO;
 import com.modelmapper.crud.repository.UsuarioRepository;
 import com.modelmapper.crud.services.exceptions.ResourceNotFoundException;
@@ -72,10 +71,8 @@ public class UsuarioServiceTests {
 	}
 	
 	@Test
-	public void saveDeveriaRetornarUsuarioDTO() {
-		UsuarioComSenhaDTO novo = Factory.CriaUsuarioComSenhaDTO();
-		
-		UsuarioDTO dto = service.insert(novo);
+	public void saveDeveriaRetornarUsuarioDTO() {		
+		UsuarioDTO dto = service.insert(Factory.CriaUsuarioComSenhaDTO());
 		
 		Assertions.assertEquals(dto.getNome(), "Igor");
 		Assertions.assertNotNull(dto);

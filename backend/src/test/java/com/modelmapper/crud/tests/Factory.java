@@ -7,7 +7,7 @@ import com.modelmapper.crud.entities.dto.UsuarioDTO;
 public class Factory {
 
 	public static Usuario CriaUsuario() {
-		Usuario usuario = new Usuario(null, "Igor", "Lourenço", "123");
+		Usuario usuario = new Usuario(1L, "Igor", "Lourenço", "123");
 		return usuario;
 	}
 	public static Usuario AtualizaUsuario() {
