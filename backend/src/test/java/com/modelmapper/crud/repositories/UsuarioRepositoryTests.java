@@ -68,7 +68,7 @@ public class UsuarioRepositoryTests {
 
 	@Test
 	public void insertDeveriaAutoIncrementarObjetoQuandoIdForNulo() {
-		Usuario usuario = Factory.CriaUsuario();
+		Usuario usuario = Factory.CriaNovoUsuario();
 
 		usuario = repository.save(usuario);
 

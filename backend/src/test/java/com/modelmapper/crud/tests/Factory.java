@@ -10,12 +10,16 @@ public class Factory {
 		Usuario usuario = new Usuario(1L, "Igor", "Lourenço", "123");
 		return usuario;
 	}
+	public static Usuario CriaNovoUsuario() {
+		Usuario usuario = new Usuario(null, "Igor", "Lourenço", "123");
+		return usuario;
+	}
 	public static Usuario AtualizaUsuario() {
 		Usuario usuario = new Usuario(1L, "AlexTeste", "Green", "123");
 		return usuario;
 	}
 	public static UsuarioComSenhaDTO CriaUsuarioComSenhaDTO() {
-		Usuario usuario = CriaUsuario();
+		Usuario usuario = new Usuario(null, "Igor", "Lourenço", "123");
 		return new UsuarioComSenhaDTO(usuario);
 	}
 	public static UsuarioDTO CriaUsuarioDTO() {
