@@ -97,6 +97,7 @@ public class UsuarioResourceTests {
 		
 		resultado.andExpect(status().isNotFound());
 	}
+	
 	@Test
 	public void updateDeveriaRetornarUsuarioDTOQuandoIdExistir() throws Exception {
 	String json = objectMapper.writeValueAsString(usuarioDTO); // converte para json
